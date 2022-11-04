@@ -1,9 +1,8 @@
 import "./components/style.css";
 import "./components/Header.css";
-
-import Product from "./components/product";
 import Header from "./components/Header"
 import Navbar1 from "./components/Navbar";
+import CardWrapper from "./components/CardWrapper"
 
 export default function App() {
   return (
@@ -16,11 +15,7 @@ export default function App() {
       <Navbar1/>
       </div>
       <div className="grid-wrap">
-      <Product/> <Product/> <Product/> <Product/> <Product/>
-      <Product/> <Product/> <Product/> <Product/> <Product/>
-      <Product/> <Product/> <Product/> <Product/> <Product/>
-      <Product/> <Product/> <Product/> <Product/> <Product/>
-      <Product/> <Product/> <Product/> <Product/>
+      <CardWrapper/>
 
       </div>
     </div>
