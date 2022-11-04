@@ -1,0 +1,22 @@
+
+.grid-wrap {
+    display: grid;
+    grid-template-columns: 150px 150px 150px 150px 150px 150px;
+    grid-gap: 25px;
+    background-color: lemonchiffon;
+    max-width: fit-content;
+    align-items: end;
+    justify-items: center;
+  }
+  
+  * {
+    padding: 0px;
+    margin: 0px;
+  }
+  .main-cover {
+    max-width: 100%;
+    background: lemonchiffon;
+    display: grid;
+    grid-template-columns: 23% 77%;
+  }
+  
