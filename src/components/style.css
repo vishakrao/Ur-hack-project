@@ -1,6 +1,6 @@
 .grid-wrap {
   display: grid;
-  grid-template-columns: 343px 343px 343px;
+  grid-template-columns: 33.1% 33.1% 33.1%;
   grid-gap: 5px;
   background-color: lemonchiffon;
   max-width: fit-content;
@@ -16,7 +16,7 @@
   max-width: 100%;
   background: lemonchiffon;
   display: grid;
-  grid-template-columns: 23% 77%;
+  grid-template-columns: 16% 84%;
 }
 /* slider content */
 html {
