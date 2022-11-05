@@ -9,7 +9,6 @@ import {
   Group,
   ActionIcon,
   Tooltip,
-  Center,
 } from '@mantine/core';
 import {
   IconBulb,
@@ -17,7 +16,6 @@ import {
   IconCheckbox,
   IconSearch,
   IconPlus,
-  IconSelector,
 } from '@tabler/icons';
 //import { UserButton } from '../UserButton/UserButton';
 

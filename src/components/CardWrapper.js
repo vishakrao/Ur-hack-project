@@ -1,32 +1,37 @@
-import { Loader } from '@mantine/core'
-import axios from 'axios' // Install axios if not yet installed 
-import React, {useEffect, useState } from 'react'
-import Cards from './Cards'
+import { Loader } from "@mantine/core";
+import axios from "axios"; // Install axios if not yet installed
+import React, { useEffect, useState } from "react";
+import Cards from "./Cards";
 
 export default function CardWrapper() {
+  const [loading, setLoading] = useState(true);
+  const [apiData, setApiData] = useState([]);
 
-    const [loading ,setLoading] = useState(true)
-    const [apiData , setApiData] = useState([])
+  const fetchApi = async () => {
+    //Fetch api using axios
+    axios
+      .get("https://picsum.photos/v2/list")
+      .then((mydata) => setApiData(mydata.data))
+      .then(setLoading(false));
+  };
 
-    const fetchApi = async () =>{      
-      //Fetch api using axios 
-        axios.get('https://picsum.photos/v2/list'   
-        ).then( mydata => setApiData(mydata.data)
-        ).then(setLoading(false))
-        }
-
-    console.log(apiData)
-    useEffect(()=>{
-      fetchApi()
-    }, [])
+  console.log(apiData);
+  useEffect(() => {
+    fetchApi();
+  }, []);
 
   return (
     <>
-    {loading && <Loader/>}
-    
-    {!loading && apiData.map(val =>(
-       <Cards url={val.download_url} amt={Math.floor(Math.random() * 10 + 1)} key={val.id}/> 
-    ))}
+      {loading && <Loader />}
+
+      {!loading &&
+        apiData.map((val) => (
+          <Cards
+            url={val.download_url}
+            amt={Math.floor(Math.random() * 10 + 1)}
+            key={val.id}
+          />
+        ))}
     </>
-  )
+  );
 }
