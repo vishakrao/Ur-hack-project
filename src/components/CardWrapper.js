@@ -15,7 +15,7 @@ export default function CardWrapper() {
         ).then(setLoading(false))
         }
 
-    console.log(apiData)
+    // console.log(apiData)
     useEffect(()=>{
       fetchApi()
     }, [])
@@ -25,7 +25,7 @@ export default function CardWrapper() {
     {loading && <Loader/>}
     
     {!loading && apiData.map(val =>(
-       <Cards url={val.download_url} amt={Math.floor(Math.random() * 10 + 1)} key={val.id}/> 
+       <Cards url={val.download_url} amt={(Math.random() *0.1 ).toFixed(2)} key={val.id}/> 
     ))}
     </>
   )
