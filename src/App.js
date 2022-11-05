@@ -6,19 +6,18 @@ import CardWrapper from "./components/CardWrapper"
 
 export default function App() {
   return (
-    <div>
+    <>
       <div className="Header">
-      <Header/>
+        <Header/>
       </div>
       <div className="main-cover">
       <div>
-      <Navbar1/>
+        <Navbar1/>
       </div>
       <div className="grid-wrap">
-      <CardWrapper/>
-
+        <CardWrapper/>
       </div>
     </div>
-    </div>
+    </>
   );
 }
