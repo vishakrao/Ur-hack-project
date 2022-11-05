@@ -1,14 +1,14 @@
 import "./components/style.css";
 import "./components/Header.css";
 import Header from "./components/Header"
-import Navbar1 from "./components/Navbar";
+import Navbar1 from "./components/Navbar1";
 import CardWrapper from "./components/CardWrapper"
-
+import MyNavbar from "./components/MyNavbar"
 export default function App() {
   return (
     <>
       <div className="Header">
-        <Header/>
+        <MyNavbar/>
       </div>
       <div className="main-cover">
       <div>
