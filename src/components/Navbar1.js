@@ -123,15 +123,15 @@ const links = [
 ];
 
 const collections = [
-  { emoji: '👍', label: 'Sales' },
-  { emoji: '🚚', label: 'Deliveries' },
-  { emoji: '💸', label: 'Discounts' },
-  { emoji: '💰', label: 'Profits' },
-  { emoji: '✨', label: 'Reports' },
-  { emoji: '🛒', label: 'Orders' },
-  { emoji: '📅', label: 'Events' },
-  { emoji: '🙈', label: 'Debts' },
-  { emoji: '💁‍♀️', label: 'Customers' },
+  { emoji: '👍', label: 'Trending' },
+  { emoji: '🚚', label: 'Top' },
+  { emoji: '💸', label: 'Notable collections' },
+  { emoji: '💰', label: 'NFT 101' },
+  { emoji: '✨', label: 'Collectibles' },
+  { emoji: '🛒', label: 'Resources' },
+  { emoji: '📅', label: 'Trading' },
+  // { emoji: '🙈', label: 'Debts' },w
+  // { emoji: '💁‍♀️', label: 'Customers' },
 ];
 
 export default function Navbar1() {

@@ -30,7 +30,7 @@ export default function MyNavbar() {
 
         <Group>
             {walAddress}
-            <Button disabled={btnVisibility} onClick={conWal}>Connect wallet</Button>
+            <Button color="orange" disabled={btnVisibility} onClick={conWal}>Connect wallet</Button>
         </Group>
 
     </Group> 

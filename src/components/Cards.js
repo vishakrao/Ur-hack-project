@@ -1,17 +1,17 @@
 import React, {useState} from 'react'
-import { Card, Image, Text, Button, Modal, Alert, Group} from "@mantine/core"
+import { Card, Image, Text, Button, Modal, Alert, Group, Avatar, Badge} from "@mantine/core"
 import { useVarsContext } from '../contexts/VarsContext'
 import { ethers } from 'ethers'
 import { useEffect } from 'react'
-
+import ethLogo from "../assets/ethLogo.png"
 
 export default function Cards(props) {
   const {signer} = useVarsContext()
   const [err, setErr] = useState()
   const [opened, setOpened] = useState()
   const [tx, setTx] = useState({})
+  const [openedS, setOpenedS] = useState()
 
-  const [openedS, setOpenedS] = useState(false)
   // const [toAddr, setToAddr] = useState("0xE3811DeFd98AF92712e54b0b3E1735c1051C86D6")
   // // const [amount, setAmount] = useState(props.amt)
 
@@ -22,26 +22,28 @@ export default function Cards(props) {
           value: ethers.utils.parseEther(`${props.amt}`)
           }))
           console.log(tx)
+          setOpenedS(true) 
       }
         catch(err){
-          // setErr(err)
-          // setOpened(true)
-          console.log(err)
+          setErr(err.message)
+          setOpened(true)
+          console.log(err)  
         }
     }
 
 
   return (
     <>
-      <Card className='box' withBorder>
-        <Group position='center'>
+      <Card radius="lg" className='box' withBorder>
 
-        <Image className="wh" src={props.url} alt="" />
-            <Text> {props.amt} Eth</Text>
-        {/* Add button functionalities - ethers.js */}
-        <Button onClick={pay}> Buy Now </Button> 
-        
-        </Group>
+        <Group position='center' >
+        <Image radius="lg" className="wh" src={props.url} alt="" />
+          <Avatar size={40} color="orange">{props.amt}
+          </Avatar>
+            <Image src={ethLogo} height={"32px"} width="24px"/>
+            <Button variant="gradient" gradient={{ from: 'orange', to: 'red' }} onClick={pay}>Buy now</Button>
+          </Group>
+          
       </Card>
 
 
@@ -52,11 +54,16 @@ export default function Cards(props) {
         </Alert>
     </Modal>
 
-      { tx && tx.hash  }
 
       {/* Order confirmed */}
-    <Modal opened={openedS} onClose={() => setOpened(false)} title="Order confirmed">
-      Confirmed
+    <Modal overlayBlur={3} overlayOpacity={0.55} opened={openedS} onClose={() => setOpenedS(false)} title="Order Summary">
+      <Alert>
+        <Group position='center' className='cf'>
+        <Text> Transaction processed </Text>
+        <Text> {tx.hash}</Text>
+        <a variant='light' target="_blank" color={"orange"} href={`https://goerli.etherscan.io/tx/${tx.hash}`} > View on etherscan </a>
+        </Group>
+      </Alert>
     </Modal>
 
     </>
