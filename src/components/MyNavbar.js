@@ -23,7 +23,7 @@ export default function MyNavbar() {
     }
   return (
     <>
-    <Group position="apart" m="16px">
+    <Group position="apart" m="8px" className="nav">
       <Group>
         Logo
       </Group>

@@ -117,20 +117,20 @@ const useStyles = createStyles((theme) => ({
 }));
 
 const links = [
-  { icon: IconBulb, label: 'Activity', notifications: 1 },
+  { icon: IconBulb, label: 'Activity',  notifications: 1 },
   { icon: IconCheckbox, label: 'Tasks', notifications: 2 },
   { icon: IconUser, label: 'Contacts' },
 ];
 
 const collections = [
-  { emoji: '👍', label: 'Trending' },
-  { emoji: '🚚', label: 'Top' },
-  { emoji: '💸', label: 'Notable collections' },
-  { emoji: '💰', label: 'NFT 101' },
-  { emoji: '✨', label: 'Collectibles' },
-  { emoji: '🛒', label: 'Resources' },
-  { emoji: '📅', label: 'Trading' },
-  // { emoji: '🙈', label: 'Debts' },w
+  { emoji: "✨", label: "Trending" },
+  { emoji: "🚚", label: "Top" },
+  { emoji: "💸", label: "Notable collections" },
+  { emoji: "💰", label: "NFT 101" },
+  { emoji: "👍", label: "Collectibles" },
+  { emoji: "🛒", label: "Resources" },
+  { emoji: "📅", label: "Trading" },
+  // { emoji: '🙈', label: 'Debts' },
   // { emoji: '💁‍♀️', label: 'Customers' },
 ];
 
@@ -163,7 +163,7 @@ export default function Navbar1() {
   ));
 
   return (
-    <Navbar height={700} width={{ sm: 240 }} p="md" className={classes.navbar}>
+    <Navbar width={{ sm: 240 }} p="md" className={`${classes.navbar} leftDash`}>
       <Navbar.Section className={classes.section}>
          <center><h3> MARKETPLACE </h3></center>
       </Navbar.Section>

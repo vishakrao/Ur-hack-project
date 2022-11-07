@@ -1,4 +1,4 @@
-import { Loader } from '@mantine/core'
+import { Group, Loader } from '@mantine/core'
 import axios from 'axios' // Install axios if not yet installed 
 import React, {useEffect, useState } from 'react'
 import Cards from './Cards'
@@ -23,10 +23,13 @@ export default function CardWrapper() {
   return (
     <>
     {loading && <Loader/>}
-    
-    {!loading && apiData.map(val =>(
-       <Cards url={val.download_url} amt={(Math.random() *0.1 ).toFixed(2)} key={val.id}/> 
-    ))}
+    <Group position="center" className='w88'>
+
+        {!loading && apiData.map(val =>(
+          <Cards url={val.download_url} amt={(Math.random() *0.1  + 0.01).toFixed(2)} key={val.id}/> 
+          ))}
+
+    </Group>
     </>
   )
 }

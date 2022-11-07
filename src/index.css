@@ -67,12 +67,47 @@ body {
   width: inherit;
   object-fit: contain;
 }
-.wh:hover{
-  transform: scale(1); 
-}
 .cf{
   display:flex;
   flex-direction: column;
   justify-content:center;
   align-items:center;
+}
+.rf{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.rSpc{
+  display:flex;
+  justify-content:space-between;
+}
+.pointer{
+  cursor:pointer;
+}
+.mp8{
+  margin: 8px;
+  padding:8px;
+}
+
+/*Layout Styles */
+.nav{
+  position: fixed;
+  width: 98%;
+  z-index: 104;
+}
+.w300{
+  width: 300px;
+}
+.w64{
+  width: 64%;
+}
+.w88{
+  width: 88%;
+}
+.mt104{
+  margin-top: 104px;
+}
+.m88{
+  margin: 88px;
 }

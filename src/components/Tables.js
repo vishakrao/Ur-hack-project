@@ -1,11 +1,11 @@
 import React, {useState} from 'react'
-import { Card, Image, Text, Button, Modal, Alert, Group, Avatar, Badge} from "@mantine/core"
+import { Card, Image, Text, Button, Modal, Alert, Group, Avatar, Table} from "@mantine/core"
 import { useVarsContext } from '../contexts/VarsContext'
 import { ethers } from 'ethers'
 import { useEffect } from 'react'
 import ethLogo from "../assets/ethLogo.png"
 
-export default function Cards(props) {
+export default function Tables(props) {
   const {signer} = useVarsContext()
   const [err, setErr] = useState()
   const [opened, setOpened] = useState()
@@ -30,23 +30,33 @@ export default function Cards(props) {
           console.log(err)  
         }
     }
+    const elements = [
+      {url: props.url, amt: props.amt, volume: props.volume }
+    ]
 
+    const rows = elements.map((val)=>(
+      <tr key={val.key}>
+      <th> <Image onClick={pay} className="pointer mp8" radius="lg" src={val.url} height="56px" width="56px"/> </th>
+
+      <th>  
+          <Group>
+            <Text size={16} color="grey">{val.amt} </Text>
+            <Image src={ethLogo} height={"24px"} width="16px"/>
+          </Group>
+       </th>
+       <th>
+          <Text size={16} color="grey">{val.volume} ETH</Text>
+       </th>
+       
+      </tr>
+    ))
 
   return (
     <>
-      <Card radius="lg" className='box' withBorder>
-
-        <Group position='center' >
-        <Image radius="lg" className="wh" src={props.url} alt="" />
-          <Avatar size={40} color="orange">{props.amt}
-          </Avatar>
-            <Image src={ethLogo} height={"32px"} width="24px"/>
-            <Button variant="gradient" gradient={{ from: 'orange', to: 'red' }} onClick={pay}>Buy now</Button>
-          </Group>
-          
-      </Card>
-
-
+          <tbody>
+           {rows}
+          </tbody>
+  
         {/* Error Modal */}
     <Modal opened={opened} onClose={() => setOpened(false)} title="Error">
         <Alert title="Please check the developer console for more details" color="red">
