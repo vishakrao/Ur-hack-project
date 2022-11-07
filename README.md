@@ -1,13 +1,17 @@
 
 # Cryptstore
 
-An NFT marketplace for minting some of the best images in the world.
+An NFT marketplace
  
 ## Description
-lorem ipsum
+An NFT marketplace for minting some of the best images in the world.
 
 ## Deployment
-[Live](https://cryptstore.web.app)
+[Live](https://cryptstore.web.app) 
+
++ If the above link doesn't work please try this (tech used here is only for hosting):
+[Optional](https://cryptstore.firebaseapp.com/)
+
 
 ## For development
 

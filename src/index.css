@@ -95,6 +95,7 @@ body {
   position: fixed;
   width: 98%;
   z-index: 104;
+  background-color: #fff;
 }
 .w300{
   width: 300px;
@@ -107,6 +108,9 @@ body {
 }
 .mt104{
   margin-top: 104px;
+}
+.p16{
+  padding: 16px;
 }
 .m88{
   margin: 88px;

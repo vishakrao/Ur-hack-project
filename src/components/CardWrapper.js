@@ -10,8 +10,8 @@ export default function CardWrapper() {
 
     const fetchApi = async () =>{      
       //Fetch api using axios 
-        axios.get('https://picsum.photos/v2/list'   
-        ).then( mydata => setApiData(mydata.data)
+        axios.get('https://pixabay.com/api/?key=31152728-003c97f1d6cc96cffebe29dfd&q=nfts'   
+        ).then( mydata => setApiData(mydata.data.hits)
         ).then(setLoading(false))
         }
 
@@ -26,7 +26,7 @@ export default function CardWrapper() {
     <Group position="center" className='w88'>
 
         {!loading && apiData.map(val =>(
-          <Cards url={val.download_url} amt={(Math.random() *0.1  + 0.01).toFixed(2)} key={val.id}/> 
+          <Cards url={val.largeImageURL} amt={(Math.random() *0.1  + 0.01).toFixed(2)} key={val.id}/> 
           ))}
 
     </Group>

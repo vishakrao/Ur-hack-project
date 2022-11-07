@@ -5,7 +5,7 @@
   "targets": {
     "resume-1domain": {
       "hosting": {
-        "v2": [
+        "v3": [
           "cryptstore"
         ]
       }
